@@ -139,7 +139,7 @@ SOFTWARE.
 
 
 <!-- links -->
-[test case configuration file](test-resources/rbak.conf)
+[test case configuration file]: test-resources/rbak.conf
 
 [travis-link]: https://travis-ci.org/plandes/rbak
 [travis-badge]: https://travis-ci.org/plandes/rbak.svg?branch=master
