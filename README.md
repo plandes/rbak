@@ -38,13 +38,44 @@ Features:
 3. Check your configuration: `$ rbak info`
 4. Backup using a dry run (i.e. careful with `rsync`'s `--delete`): `$ rbak
    --dryrun backup`
-5. Backup for real: `$ rbak backup`
+5. Start the backup: `$ rbak backup`
 
 
 ### Configuration
 
 See the [test case configuration file], which has the explains each line of
 configuration in detail.
+
+Here's a sample:
+```ini
+## default section has configuration shared with all targets and sources
+[default]
+# name of file to look for in targets to determine if mounted
+info_file=info.conf
+# default name of backup directory for each target--this gets appended to the
+# target's path
+backup_dir=bak
+# commands for mounting, un-mounting and backing up
+mount_cmd=/bin/mount -L {name} {path}
+umount_cmd=/bin/umount {path}
+backup_cmd=rsync -rltpgoDuv --delete {source.path}/ {target.backup_path}/{source.basename}
+# list of targets and sources, each of which need their own sections
+targets=extbak2t
+sources=git
+
+## target `extbak2t` is an example of a mountable file system (i.e. USB drive)
+[extbak2t]
+# declare this to be a mountable file system
+mountable=true
+# path resolves to /mnt/extbak2t ({name} is the target/section name)
+path=/mnt/{name}
+
+## the one and only source for this configuration
+[git]
+# path of where files will be copied from
+path=/opt/var/git
+```
+
 
 The `backup_cmd` need not be an `rsync` command, it can be anything
 and you can use any property of the source and target that are generated at
@@ -53,6 +84,11 @@ runtime, but it can also by any property of these classes.
 The global `default` section's `backup_dir` variable is shared with all targets
 and sources.  This variable is appended to the target's path so the program can
 differentiate between the mount point and the path to back up files.
+
+This program was written KISS (keep it simple) philosophy.  If you have a
+transitive backup situation (i.e. backup A -> B, then B -> C), it's better to
+break this out into two separate configuration files and two separate backup
+invocations.
 
 
 ### Help
