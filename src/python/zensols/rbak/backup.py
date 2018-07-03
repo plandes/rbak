@@ -12,8 +12,9 @@ class Backuper(object):
     """
     This class runs backups from sources to targets.
     """
-    def __init__(self, config, dry_run=True, executor=None):
+    def __init__(self, config, source_names=None, dry_run=True, executor=None):
         self.config = config
+        self.source_names = source_names
         self.executor = executor if executor else Executor(logger, dry_run)
         self.backup_cmd = config.get_option('backup_cmd', expect=True)
 
@@ -33,7 +34,10 @@ class Backuper(object):
     def sources(self):
         "Get all configured sources."
         if not hasattr(self, '_sources'):
-            source_names = self.config.get_option_list('sources', expect=True)
+            if self.source_names is not None:
+                source_names = self.source_names.split(' ')
+            else:
+                source_names = self.config.get_option_list('sources', expect=True)
             self._sources = [Source(l, self.config) for l in source_names]
         return self._sources
 

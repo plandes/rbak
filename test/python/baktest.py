@@ -76,3 +76,13 @@ class TestBackuper(unittest.TestCase):
                 'rsync -rltpgoDuv -n /opt/var/git/ /opt/hd1/git',
                 'rsync -rltpgoDuv -n /opt/var/svn/ /opt/hd1/other/svndir']
         self.assertEqual(cmds, ex.cmds)
+
+    def test_sync_sources_override(self):
+        conf = Config('test-resources/rbak.conf')
+        ex = PushExecutor()
+        bak = Backuper(conf, source_names='git', executor=ex, dry_run=True)
+        bak.sync()
+        cmds = ['/bin/mount -L extbak2t /mnt/extbak2t',
+                'rsync -rltpgoDuv -n /opt/var/git/ /mnt/extbak2t/bak/git',
+                'rsync -rltpgoDuv -n /opt/var/git/ /opt/hd1/git']
+        self.assertEqual(cmds, ex.cmds)
