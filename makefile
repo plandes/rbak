@@ -9,4 +9,4 @@ _ :=	$(shell [ ! -d .git ] && git init ; [ ! -d zenbuild ] && \
 
 include ./zenbuild/main.mk
 
-#PY_SRC_TEST_PKGS=baktest.TestBackuper.test_sync
+#PY_SRC_TEST_PKGS=baktest.TestBackuper.test_read_sources

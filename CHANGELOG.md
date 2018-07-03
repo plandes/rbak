@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+
+## [0.0.1] - 2018-07-03
+### Added
+- Overridable basename for sources
+
+
 ## [0.0.1] - 2018-06-25
 ### Added
 - Initial version

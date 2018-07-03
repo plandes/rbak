@@ -51,8 +51,11 @@ class TestBackuper(unittest.TestCase):
         conf = Config('test-resources/rbak.conf')
         bak = Backuper(conf, dry_run=True)
         sources = bak.sources
-        self.assertEqual(1, len(sources))
+        self.assertEqual(2, len(sources))
         self.assertEqual('/opt/var/git', sources[0].path)
+        self.assertEqual('git', sources[0].basename)
+        self.assertEqual('/opt/var/svn', sources[1].path)
+        self.assertEqual('other/svndir', sources[1].basename)
 
     def test_mount(self):
         conf = Config('test-resources/rbak.conf')
@@ -69,5 +72,7 @@ class TestBackuper(unittest.TestCase):
         bak.sync()
         cmds = ['/bin/mount -L extbak2t /mnt/extbak2t',
                 'rsync -rltpgoDuv -n /opt/var/git/ /mnt/extbak2t/bak/git',
-                'rsync -rltpgoDuv -n /opt/var/git/ /opt/hd1/git']
+                'rsync -rltpgoDuv -n /opt/var/svn/ /mnt/extbak2t/bak/other/svndir',
+                'rsync -rltpgoDuv -n /opt/var/git/ /opt/hd1/git',
+                'rsync -rltpgoDuv -n /opt/var/svn/ /opt/hd1/other/svndir']
         self.assertEqual(cmds, ex.cmds)

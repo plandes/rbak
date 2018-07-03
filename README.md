@@ -74,6 +74,8 @@ path=/mnt/{name}
 [git]
 # path of where files will be copied from
 path=/opt/var/git
+# override the basenme target backup directory
+basename_dir=other/gitpath
 ```
 
 
@@ -84,6 +86,10 @@ runtime, but it can also by any property of these classes.
 The global `default` section's `backup_dir` variable is shared with all targets
 and sources.  This variable is appended to the target's path so the program can
 differentiate between the mount point and the path to back up files.
+
+The `basename_dir` property in sources overrides the `source.basenme` property
+in `backup_cmd`.  If this is not given it defaults to the basename of the
+source's `path` property.
 
 This program was written KISS (keep it simple) philosophy.  If you have a
 transitive backup situation (i.e. backup A -> B, then B -> C), it's better to

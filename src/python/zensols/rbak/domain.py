@@ -83,11 +83,12 @@ class Source(object):
     def __init__(self, name, config):
         self.name = name
         self.path = config.get_option('path', name, expect=True)
+        self.basename_dir = config.get_option('basename_dir', name)
 
     @property
     def basename(self):
         "Return the basename (sans file name) of the source path."
-        return os.path.basename(self.path)
+        return self.basename_dir or os.path.basename(self.path)
 
     def __str__(self):
         return self.path
