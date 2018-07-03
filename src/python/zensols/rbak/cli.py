@@ -27,7 +27,7 @@ class ConfAppCommandLine(OneConfPerActionOptionsCli):
                             {'name': 'backup',
                              'meth': 'sync',
                              'doc': 'run the backup',
-                             'opts': [dry_run_op]},
+                             'opts': [dry_run_op, sources_op]},
                             {'name': 'mount',
                              'meth': 'mount_all',
                              'doc': 'mount all targets',

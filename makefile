@@ -1,7 +1,7 @@
 ## makefile automates the build and deployment for python projects
 
 PROJ_TYPE=	python
-PYTHON_BIN_ARGS=umount
+PYTHON_BIN_ARGS=--help
 
 # make build dependencies
 _ :=	$(shell [ ! -d .git ] && git init ; [ ! -d zenbuild ] && \

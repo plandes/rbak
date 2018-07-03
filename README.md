@@ -94,7 +94,8 @@ source's `path` property.
 This program was written KISS (keep it simple) philosophy.  If you have a
 transitive backup situation (i.e. backup A -> B, then B -> C), it's better to
 break this out into two separate configuration files and two separate backup
-invocations.
+invocations.  That said, in some cases you may be able to utilize the
+`--sources` option to set which sources to backup.
 
 
 ### Help
@@ -120,8 +121,9 @@ Usage: rbak backup [additional options]
 Run the backup
 
 Options:
-  -d, --dryrun  dry run to not actually connect, but act like it
-  -h, --help    show this help message and exit
+  -d, --dryrun   dry run to not actually connect, but act like it
+  -s, --sources  override the sources property in the config
+  -h, --help     show this help message and exit
 
 
 Usage: rbak mount [additional options]

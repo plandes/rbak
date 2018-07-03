@@ -10,8 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.0.1] - 2018-07-03
 ### Added
-- Overridable basename for sources
-
+- Overridable basename for sources.
+- Source list override features.
 
 ## [0.0.1] - 2018-06-25
 ### Added
