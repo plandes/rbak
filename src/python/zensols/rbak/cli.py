@@ -6,7 +6,7 @@ from zensols.rbak import Backuper
 
 logger = logging.getLogger('zensols.rbak.cli')
 
-VERSION='0.1'
+VERSION='0.2'
 
 # recommended app command line
 class ConfAppCommandLine(OneConfPerActionOptionsCli):
