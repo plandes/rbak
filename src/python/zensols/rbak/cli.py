@@ -15,7 +15,7 @@ class ConfAppCommandLine(OneConfPerActionOptionsCli):
                       {'dest': 'dry_run',
                        'action': 'store_true', 'default': False,
                        'help': 'dry run to not actually connect, but act like it'}]
-        sources_op = ['-s', '--sources', True,
+        sources_op = ['-n', '--sources', True,
                       {'dest': 'source_names',
                        'action': 'store_true', 'default': False,
                        'help': 'override the sources property in the config'}]

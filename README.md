@@ -122,7 +122,7 @@ Run the backup
 
 Options:
   -d, --dryrun   dry run to not actually connect, but act like it
-  -s, --sources  override the sources property in the config
+  -n, --sources  override the sources property in the config
   -h, --help     show this help message and exit
 
 
