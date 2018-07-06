@@ -8,14 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 
-## [0.0.2] - 2018-07-03
+## [0.0.3] - 2018-07-05
+### Changed
+- Move to popen (fork/exec w/child piped communication).
+
 ### Added
 - Overridable basename for sources.
 - Source list override features.
+
 
 ## [0.0.1] - 2018-06-25
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/plandes/rbak/compare/v0.0.2...HEAD
-[0.0.2]: https://github.com/plandes/rbak/compare/v0.0.1...v0.0.2
+
+[Unreleased]: https://github.com/plandes/rbak/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/plandes/rbak/compare/v0.0.1...v0.0.3
