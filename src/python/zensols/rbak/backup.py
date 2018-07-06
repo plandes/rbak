@@ -3,8 +3,8 @@ import pathlib
 import sys
 import logging
 
+from zensols.actioncli import Executor
 from zensols.rbak import Target, Source
-from zensols.rbak import Executor
 
 logger = logging.getLogger('zensols.rbak.backup')
 
