@@ -2,7 +2,7 @@
 
 [![Travis CI Build Status][travis-badge]][travis-link]
 
-This program copies *source* paths optionally mountable *targets*.  You can
+This program copies *source* paths to optionally mountable *targets*.  You can
 configure whether or not a target is mountable or not.  If it is, the program
 mounts the file system by looking for a `info.conf` file and mounts if the file
 is not found.  The program only looks to see if this file exists and does not
