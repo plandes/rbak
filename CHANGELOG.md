@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 
+## [0.0.4] - 2018-07-05
+### Changed
+- GitHub markup on Pypi.
+- New zenbuild.
+
+
 ## [0.0.3] - 2018-07-05
 ### Changed
 - Move to popen (fork/exec w/child piped communication).
@@ -22,5 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial version
 
 
-[Unreleased]: https://github.com/plandes/rbak/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/plandes/rbak/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/plandes/rbak/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/plandes/rbak/compare/v0.0.1...v0.0.3

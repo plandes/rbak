@@ -152,6 +152,7 @@ The easist way to install the command line program is via the `pip` installer:
 pip install zensols.rbak
 ```
 
+Binaries are also available on [pypi].
 
 
 ## Changelog
@@ -184,6 +185,7 @@ SOFTWARE.
 
 <!-- links -->
 [test case configuration file]: test-resources/rbak.conf
+[pypi]: https://pypi.org/project/zensols.rbak/
 
 [travis-link]: https://travis-ci.org/plandes/rbak
 [travis-badge]: https://travis-ci.org/plandes/rbak.svg?branch=master
