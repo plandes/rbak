@@ -1,12 +1,11 @@
 import os
-import pathlib
+from pathlib import Path
 import sys
 import logging
-
-from zensols.actioncli import Executor
 from zensols.rbak import Target, Source
 
 logger = logging.getLogger('zensols.rbak.backup')
+
 
 class Backuper(object):
     """
@@ -86,7 +85,7 @@ class Backuper(object):
             if not os.path.isdir(targ.backup_path):
                 logger.info('creating path: {}'.format(targ.backup_path))
                 if not self.dry_run:
-                    pathlib.Path(targ.backup_path).mkdir(parents=True, exist_ok=True)
+                    Path(targ.backup_path).mkdir(parents=True, exist_ok=True)
             for source in self.sources:
                 cmd_ctx = {'source': source, 'target': targ}
                 logger.info('{} -> {}'.format(source.path, targ.backup_path))
