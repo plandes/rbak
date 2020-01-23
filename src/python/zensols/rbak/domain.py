@@ -2,7 +2,7 @@ import logging
 import os
 from zensols.actioncli import Executor
 
-logger = logging.getLogger('zensols.rbak.target')
+logger = logging.getLogger(__name__)
 
 
 class Target(object):
@@ -33,7 +33,7 @@ class Target(object):
 
     @property
     def backup_path(self):
-        "Return the path of where the target directory."
+        "Return the path of the target directory."
         if len(self.backup_dir) > 0:
             return os.path.join(self.path, self.backup_dir)
         else:

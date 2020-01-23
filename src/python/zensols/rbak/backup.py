@@ -5,7 +5,7 @@ import logging
 from zensols.actioncli import Executor
 from zensols.rbak import Target, Source
 
-logger = logging.getLogger('zensols.rbak.backup')
+logger = logging.getLogger(__name__)
 
 
 class Backuper(object):
@@ -49,6 +49,10 @@ class Backuper(object):
         print('targets:')
         for targ in self.targets:
             print('  {}'.format(targ))
+        print('backups:')
+        for targ in self.targets:
+            for source in self.sources:
+                print('  {} -> {}'.format(source.path, targ.backup_path))
 
     def mount_all(self):
         "Mount all mountable targets."
