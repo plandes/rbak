@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-import sys
 import logging
 from zensols.actioncli import Executor
 from zensols.rbak import Target, Source
@@ -9,8 +8,8 @@ logger = logging.getLogger(__name__)
 
 
 class Backuper(object):
-    """
-    This class runs backups from sources to targets.
+    """This class runs backups from sources to targets.
+
     """
     def __init__(self, config, source_names=None, dry_run=True, executor=None):
         self.config = config

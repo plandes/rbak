@@ -1,6 +1,5 @@
 import logging
 import os
-from zensols.actioncli import Executor
 
 logger = logging.getLogger(__name__)
 
@@ -8,6 +7,7 @@ logger = logging.getLogger(__name__)
 class Target(object):
     """Represents to where files are backed up.  Sometimes this is an external
     file system.
+
     """
     def __init__(self, name, executor, config):
         self.name = name
@@ -52,7 +52,7 @@ class Target(object):
     def mount(self):
         "Mount the target if not already.  Raise error if it is not mountable."
         self._assert_mountable()
-        if  self.is_mounted:
+        if self.is_mounted:
             logger.warning('{} is already mounted'.format(self.path))
         else:
             logger.info('mounting {}'.format(self))
@@ -76,8 +76,8 @@ class Target(object):
 
 
 class Source(object):
-    """
-    Represents from where files are backed up.
+    """Represents from where files are backed up.
+
     """
     def __init__(self, name, config):
         self.name = name
